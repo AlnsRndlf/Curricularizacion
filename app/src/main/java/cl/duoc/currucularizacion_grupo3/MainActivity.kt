@@ -11,8 +11,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import cl.duoc.currucularizacion_grupo3.ui.screnns.HomeScreen2
+import cl.duoc.currucularizacion_grupo3.ui.screnns.HomeScreenCompacta
+import cl.duoc.currucularizacion_grupo3.ui.screnns.HomeScreenExtensa
+import cl.duoc.currucularizacion_grupo3.ui.screnns.HomeScreenMediana
 import cl.duoc.currucularizacion_grupo3.ui.theme.Currucularizacion_grupo3Theme
 
+
+
+
+/* save main
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +37,10 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+*/
 
+
+/* save geeting
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -44,4 +55,46 @@ fun GreetingPreview() {
     Currucularizacion_grupo3Theme {
         Greeting("Android")
     }
+}
+*/
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            Currucularizacion_grupo3Theme {
+                HomeScreen2()
+            }
+        }
+
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun GeetingPreview() {
+    Currucularizacion_grupo3Theme {
+        HomeScreen2()
+    }
+}
+
+
+@Preview(name = "Compact", widthDp = 360, heightDp = 800)
+@Composable
+fun PreviewCompact() {
+    HomeScreenCompacta() //[cite: 1]
+}
+
+@Preview(name = "Medium", widthDp = 600, heightDp = 900)
+@Composable
+fun PreviewMedium() {
+    HomeScreenMediana()
+}
+
+@Preview(name = "Expanded", widthDp = 840, heightDp = 1080)
+@Composable
+fun PreviewExpanded() {
+    HomeScreenExtensa()
 }
